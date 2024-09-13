@@ -16,9 +16,10 @@
         // Extract the token after ?code=
         let urlParams = new URLSearchParams(window.location.search);
         let token = urlParams.get('code');
-        
+
+        // Make sure token is properly captured without any errors
         console.log(token);  // This will show the authorization code
-        
+
         // Display the token or show a message if no token is found
         document.getElementById('token-display').textContent = token ? `Access Token: ${token}` : 'No token found.';
     </script>
