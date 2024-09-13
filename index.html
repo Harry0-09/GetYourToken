@@ -10,12 +10,14 @@
     <p id="token-display"></p>
 
     <script>
+        // Get the full URL of the current page
         var currentUrl = window.location.href;
         
-        let token = currentUrl.substr(0, 48);
+        // Cut off the first 48 characters from the URL to get the remaining part
+        let token = currentUrl.slice(48); // Use slice to cut from the 48th character to the end
         console.log(token);
         
-        // Display the token
+        // Display the token or show a message if no token is found
         document.getElementById('token-display').textContent = token ? `Access Token: ${token}` : 'No token found.';
     </script>
 </body>
