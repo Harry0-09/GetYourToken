@@ -10,18 +10,14 @@
     <p id="token-display"></p>
 
     <script>
-        // Get the full URL of the current page
         var currentUrl = window.location.href;
         
-        // Extract the token after ?code=
         let urlParams = new URLSearchParams(window.location.search);
         let token = urlParams.get('code');
 
-        // Make sure token is properly captured without any errors
-        console.log(token);  // This will show the authorization code
-
-        // Display the token or show a message if no token is found
-        document.getElementById('token-display').textContent = token ? `Skopiuj i wklej do komendy aktywacja: ${token}` : 'No token found.';
+        console.log(token); 
+        
+        document.getElementById('token-display').textContent = token ? `${token}` : 'No token found.';
     </script>
 </body>
 </html>
