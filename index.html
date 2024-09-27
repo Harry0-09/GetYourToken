@@ -17,18 +17,19 @@
         let urlParams = new URLSearchParams(window.location.search);
         let token = urlParams.get('code');
         
-        document.getElementById('copyButton').addEventListener('click', function() {
+        document.getElementById('Copy').addEventListener('click', function() {
             if (token) {
                 navigator.clipboard.writeText(token).then(function() {
                     
                     alert("Skopiowano kod do schowka!");
                     
                 }).catch(function(err) {
-                    console.error('Failed to copy: ', err);
+                    console.error('Nie udalo sie skopiowac: ', err);
                 });
                 
             } else {
                 alert("Nie znaleziono kodu do skopiowania.");
     </script>
+    
 </body>
 </html>
