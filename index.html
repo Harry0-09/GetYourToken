@@ -9,15 +9,20 @@
     <h1>Twoj kod dostepu do aplikacji</h1>
     <p id="token-display"></p>
 
+    <button id="Copy">Kopiuj do schowka</button>    
+    
     <script>
         var currentUrl = window.location.href;
         
         let urlParams = new URLSearchParams(window.location.search);
         let token = urlParams.get('code');
-
-        console.log(token); 
         
         document.getElementById('token-display').textContent = token ? `${token}` : 'No token found.';
+
+        navigator.clipboard.writeText(token).then(function() {
+        alert("Skopiowano kod do schowka!")
+        }
+        
     </script>
 </body>
 </html>
